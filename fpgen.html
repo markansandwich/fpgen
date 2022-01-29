@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FP Generator</title>
+</head>
+<body>
+<h1 style="text-align: center">False Prophecy Generator</h1>
+
+<div style="text-align: center">
+    <h3 style="text-align: center">Generate a new false prophecy: </h3>
+    <button type="falseProphecy" onclick="falseProphecy()"
+        style="
+            background-color: #800080;
+            color: #EDEEEF;
+            height: 50px;
+            width: 100px;
+            ">
+        <strong>Go!</strong></button>
+    <br>
+    <br>
+    <textarea disabled
+            name="falseProphecy"
+            id="falseProphecy"
+            rows="4" cols="50"
+            style="
+                text-align: center;
+                padding: 30px;
+                word-wrap: normal;
+    "></textarea>
+    <br>
+    <br>
+    <button onclick="window.location.reload(true); return false;"
+        style="
+            background-color: #EDEEEF;
+            color: #800080;
+            height: 45px;
+            width: 125px;
+            ">
+        <strong>Refresh sentences</strong></button>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<script>
+    function r(list) {
+        return list[Math.floor(Math.random() * list.length)];
+    }
+    const nouns = Array(
+        "calling",
+        "release",
+        "purpose",
+        "harvest",
+        "religious spirit",
+        "destiny",
+        "transition",
+        "new thing",
+        "suddenly",
+        "prosperity",
+        "health",
+        "river",
+        "realm",
+        "upgrade",
+        "deliverance",
+        "shift",
+        "curse",
+        "visitation",
+        "mantle",
+        "timing",
+        "vision",
+        "new level",
+        "place",
+        "new wineskin",
+        "spirit",
+        "reversal",
+        "covering",
+        "momentum",
+        "healing",
+        "wealth",
+        "transfer",
+        "season",
+        "breakthrough",
+        "position",
+        "dimension",
+        "potential",
+        "birthing",
+        "download",
+        "stronghold",
+        "seed",
+        "Jezebel Spirit",
+        "spirit",
+        "dream",
+        "breath",
+        "manifestation",
+        "life",
+        "visitation",
+        "glory",
+        "bondage",
+        "provision",
+        "flow",
+        "favor",
+        "shaking",
+        "fire",
+        "presence",
+        "blessing",
+        "portal",
+        "kingdom",
+        "victory",
+        "miracle",
+        "delay",
+    );
+    const nouns_vwl = Array(
+        "activation",
+        "advancement",
+        "upgrade",
+        "annointing",
+        "influence",
+        "atmosphere",
+        "inheritance",
+        "increase",
+        "assignment",
+        "outpouring",
+        "alignment",
+        "awakening",
+        "acceleration",
+        "enemy",
+        "appointment",
+        "identity",
+    );
+    const verbs = Array(
+        "restore",
+        "bind",
+        "ignite",
+        "appoint",
+        "pour out",
+        "download",
+        "unlock",
+        "birth",
+        "give birth to",
+        "sow",
+        "annoints",
+        "upgrade",
+        "increase",
+        "transition",
+        "shift",
+        "activate",
+        "believe for",
+        "manifest",
+        "declare",
+        "prosper",
+        "deliver",
+        "decree",
+        "battle",
+        "release",
+        "receive",
+        "step into",
+        "lean into",
+        "speak into",
+        "open",
+    );
+    const verbs_intr = Array(
+        "be restored",
+        "ignite",
+        "be appointed",
+        "pour out",
+        "be downloaded",
+        "be unlocked",
+        "be birthed",
+        "be annointed",
+        "increase",
+        "transition",
+        "shift",
+        "activate",
+        "manifest",
+        "prosper",
+        "be delivered",
+        "be released",
+        "thrive",
+        "open",
+    );
+    const pl_nouns = Array(
+        "heavens",
+        "portals",
+        "people",
+        "suddenlies",
+        "places",
+        "promises",
+        "strategies",
+        "purposes",
+        "dreams",
+        "visions",
+        "miracles",
+        "blessings",
+    );
+    const adjectives = Array(
+        "fresh",
+        "double",
+        "generational",
+        "supernatural",
+        "abundant",
+        "deep",
+        "appointed",
+        "powerful",
+        "new",
+        "annointed",
+        "shekinah",
+        "spiritual",
+    );
+    const verbing = Array(
+        "restoring",
+        "doing",
+        "binding",
+        "igniting",
+        "appointing",
+        "pouring out",
+        "downloading",
+        "unlocking",
+        "birthing",
+        "giving birth to",
+        "sowing",
+        "annointing",
+        "upgrading",
+        "increasing",
+        "transitioning",
+        "shifting",
+        "activating",
+        "believing for",
+        "manifesting",
+        "declaring",
+        "prospering",
+        "delivering",
+        "decreeing",
+        "battling",
+        "releasing",
+        "stepping into",
+        "leaning into",
+        "speaking into",
+        "opening",
+    );
+    const verbing_intr = Array(
+        "being restored",
+        "being done",
+        "being bound",
+        "being ignited",
+        "being appointed",
+        "being poured out",
+        "being downloaded",
+        "being unlocked",
+        "being birthed",
+        "being annointed",
+        "being increased",
+        "being shifted",
+        "being manifested",
+        "being declared",
+        "being delivered",
+        "being decreed",
+        "being released",
+        "being opened",
+    );
+    const sentences = Array(
+        "There is a " + r(nouns) + " in this " + r(nouns) + ". ",
+        "In this " + r(nouns) + " you are going to " + r(verbs) + " a " + r(nouns) + ". ",
+        "God is going to " + r(verbs) + " your " + r(nouns) + ". ",
+        "God is going to " + r(verbs) + " an " + r(nouns_vwl) + ". ",
+        "Have faith; God is going to " + r(verbs) + " your " + r(nouns_vwl) + " and give you a " + r(nouns) + ". ",
+        "The " + r(pl_nouns) + " are moving in this " + r(nouns)+ ". ",
+        "The " + r(adjectives) + " " + r(pl_nouns) + " are moving in this " + r(nouns_vwl)+ ". ",
+        "God gave me a vision of a " + r(adjectives) + " " + r(nouns) + " sitting on the " + r(nouns) + " of heaven. ",
+        "This year, the " + r(pl_nouns) + " will " + r(verbs_intr) + " and there will be a " + r(nouns) + " in the " + r(nouns) + ". ",
+        "This season, the " + r(pl_nouns) + " will " + r(verbs_intr) + " and there will be an " + r(nouns_vwl) + " for the " + r(pl_nouns) + ". ",
+        "\"Behold, I am going to " + r(verbs) + " a new " + r(nouns) + ",\" says the Lord. ",
+        "There is a " + r(adjectives) + " " + r(nouns_vwl) + " of " + r(nouns) + ". ",
+        "\"I will " + r(verbs) + " " + r(nouns) + " upon the " + r(nouns) + ",\" says the Lord. ",
+        "The " + r(nouns) + " of " + r(nouns) + " is going to be " + r(adjectives) + ". ",
+        "The " + r(nouns_vwl) + " of " + r(nouns) + " is going to be " + r(adjectives) + ". ",
+        "You will " + r(verbs) + " a new " + r(nouns) + ". ",
+        "You will " + r(verbs) + " a new " + r(nouns_vwl) + ". ",
+        "\"I will " + r(verbs) + " " + r(pl_nouns) + " and " + r(pl_nouns) + ",\" says the Lord. ",
+        "This will be a month of " + r(adjectives) + " " + r(nouns) + ". ",
+        "God is " + r(verbing) + " " + r(pl_nouns) + " in the " + r(nouns) + ". ",
+        "God told me he is going to " + r(verbs) + " the " + r(adjectives) + " " + r(pl_nouns) + " of " + r(nouns) + ". ",
+        "You need to " + r(verbs) + " the " + r(nouns) + ". ",
+        "There are " + r(pl_nouns) + " " + r(verbing_intr) + " in the " + r(adjectives) + " " + r(pl_nouns) + ". ",
+        "\"I am going to " + r(verbs) + " the " + r(pl_nouns) + " I have for you,\" says the Lord. ",
+        "Are you " + r(verbing) + " your " + r(nouns) + "? ",
+        "The Lord said it is time to " + r(verbs) + " a " + r(nouns) + ". ",
+        "The Lord said it is time to " + r(verbs) + " an " + r(nouns_vwl) + ". ",
+        "There will be a " + r(adjectives) + " " + r(nouns) + " in your " + r(adjectives) + " " + r(nouns) + ". ",
+        "It is time for the " + r(pl_nouns) + " to " + r(verbs_intr) + ". ",
+        "There are " + r(pl_nouns) + " " + r(verbing_intr) + " and you will " + r(verbs) + " your " + r(nouns) + ". ",
+        "There are " + r(pl_nouns) + " " + r(verbing_intr) + " and you will " + r(verbs) + " an " + r(nouns_vwl) + ". ",
+        "Basta!",
+    );
+    const variations = Array(
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+    );
+    function falseProphecy() {
+        document.getElementById('falseProphecy').value = r(variations);
+    }
+</script>
+
+</body>
+</html>
