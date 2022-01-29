@@ -5,3 +5,4 @@ Ever wanted to be a modern day prophet but don't know where to start? Well now y
 
 ![fpgen_img1](https://user-images.githubusercontent.com/73722162/151677583-502f9642-1e05-4bb0-991f-3a354602e176.png)
 
+![fpgen_img2](https://user-images.githubusercontent.com/73722162/151677980-4994acd0-6a25-4fd2-8191-0f2bd433e1b0.png)
