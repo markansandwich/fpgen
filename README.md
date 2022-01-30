@@ -3,6 +3,8 @@
 
 Ever wanted to be a modern day prophet but don't know where to start? Well now you can pull prophecies out of thin air, without needing to go through the trouble of fabricating them in your own mind. With False Prophecy Generator, you can join the big leagues of modern prophecy, and spout the same buzzwords they seem to repeat over and over. Unlock your annointing today!
 
-![fpgen_img1](https://user-images.githubusercontent.com/73722162/151677583-502f9642-1e05-4bb0-991f-3a354602e176.png)
+![fpgen_img3](https://user-images.githubusercontent.com/73722162/151685426-c285837d-8793-4bd1-bce0-f1903ad954d7.png)
 
-![fpgen_img2](https://user-images.githubusercontent.com/73722162/151677980-4994acd0-6a25-4fd2-8191-0f2bd433e1b0.png)
+![fpgen_img4](https://user-images.githubusercontent.com/73722162/151685428-18e9f50f-f05c-4e60-88d8-ccbbcd9743c6.png)
+
+
