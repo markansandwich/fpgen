@@ -13,6 +13,13 @@
             border-width: medium;
             border-radius: 10px;
         }
+        .button {
+            transition-duration: 0.4s;
+        }
+        .button:hover {
+            background-color: #EDEEEF; /* */
+            color: #800080;
+        }
     </style>
 </head>
 <body>
@@ -26,8 +33,10 @@
             color: #EDEEEF;
             height: 55px;
             width: 100px;
+            font-weight: bold;
+            font-size: 16px;
             ">
-        <strong>Go!</strong></button>
+        Go!</button>
     <br>
     <br>
     <textarea disabled
@@ -46,8 +55,8 @@
     <br>
     <button class="round_b" onclick="window.location.reload(true); return false;"
         style="
-            background-color: #EDEEEF;
-            color: #800080;
+            background-color: #800080;
+            color: #EDEEEF;
             height: 50px;
             width: 125px;
             ">
