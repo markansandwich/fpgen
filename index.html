@@ -9,14 +9,18 @@
             margin-left: 25px;
         }
         .round_b {
-            border-style: outset;
+            border-style: solid;
+            border-color: #430043;
             border-width: medium;
             border-radius: 10px;
-        }
-        .button {
+            background-color: #800080;
+            color: #EDEEEF;
+            height: 50px;
+            width: 125px;
             transition-duration: 0.4s;
+            cursor: pointer;
         }
-        .button:hover {
+        .round_b:hover {
             background-color: #EDEEEF; /* */
             color: #800080;
         }
@@ -29,8 +33,6 @@
     <h3 style="text-align: center">Generate a new false prophecy: </h3>
     <button class="round_b" type="falseProphecy" onclick="falseProphecy()"
         style="
-            background-color: #800080;
-            color: #EDEEEF;
             height: 55px;
             width: 100px;
             font-weight: bold;
@@ -54,12 +56,6 @@
     <br>
     <br>
     <button class="round_b" onclick="window.location.reload(true); return false;"
-        style="
-            background-color: #800080;
-            color: #EDEEEF;
-            height: 50px;
-            width: 125px;
-            ">
         <strong>Refresh sentences</strong></button>
 <br>
 <br>
