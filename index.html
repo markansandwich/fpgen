@@ -129,6 +129,7 @@ View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank
         "miracle",
         "delay",
         "movement",
+        "promotion",
     );
     const nouns_vwl = Array(
         "activation",
@@ -196,7 +197,6 @@ View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank
         "prosper",
         "be delivered",
         "be released",
-        "thrive",
         "open",
     );
     const pl_nouns = Array(
@@ -212,6 +212,7 @@ View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank
         "visions",
         "miracles",
         "blessings",
+        "signs and wonders",
     );
     const adjectives = Array(
         "fresh",
@@ -226,6 +227,7 @@ View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank
         "annointed",
         "shekinah",
         "spiritual",
+        "divine",
     );
     const verbing = Array(
         "restoring",
@@ -281,25 +283,27 @@ View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank
     const sentences = Array(
         "There is a " + r(nouns) + " in this " + r(nouns) + ". ",
         "In this " + r(nouns) + " you are going to " + r(verbs) + " a " + r(nouns) + ". ",
+        "In this " + r(nouns) + " you are going to " + r(verbs) + " an " + r(nouns_vwl) + ". ",
         "God is going to " + r(verbs) + " your " + r(nouns) + ". ",
-        "God is going to " + r(verbs) + " an " + r(nouns_vwl) + ". ",
+        "God is going to " + r(verbs) + " your " + r(nouns_vwl) + ". ",
         "Have faith; God is going to " + r(verbs) + " your " + r(nouns_vwl) + " and give you a " + r(nouns) + ". ",
         "The " + r(pl_nouns) + " are moving in this " + r(nouns)+ ". ",
         "The " + r(adjectives) + " " + r(pl_nouns) + " are moving in this " + r(nouns_vwl)+ ". ",
-        "God gave me a vision of a " + r(adjectives) + " " + r(nouns) + " sitting on the " + r(nouns) + " of heaven. ",
+        "God gave me a vision of a " + r(adjectives) + " " + r(nouns) + " waiting to " + r(verbs_intr) + " from heaven. ",
         "This year, the " + r(pl_nouns) + " will " + r(verbs_intr) + " and there will be a " + r(nouns) + " in the " + r(nouns) + ". ",
         "This season, the " + r(pl_nouns) + " will " + r(verbs_intr) + " and there will be an " + r(nouns_vwl) + " for the " + r(pl_nouns) + ". ",
         "\"Behold, I am going to " + r(verbs) + " a new " + r(nouns) + ",\" says the Lord. ",
         "There is a " + r(adjectives) + " " + r(nouns_vwl) + " of " + r(nouns) + ". ",
         "\"I will " + r(verbs) + " " + r(nouns) + " upon the " + r(nouns) + ",\" says the Lord. ",
-        "The " + r(nouns) + " of " + r(nouns) + " is going to be " + r(adjectives) + ". ",
-        "The " + r(nouns_vwl) + " of " + r(nouns) + " is going to be " + r(adjectives) + ". ",
+        "The " + r(nouns) + " of " + r(nouns_vwl) + " is going to be " + r(adjectives) + ". ",
+        "The " + r(nouns_vwl) + " of the " + r(nouns) + " is going to be " + r(adjectives) + ". ",
         "You will " + r(verbs) + " a new " + r(nouns) + ". ",
         "You will " + r(verbs) + " a new " + r(nouns_vwl) + ". ",
         "\"I will " + r(verbs) + " " + r(pl_nouns) + " and " + r(pl_nouns) + ",\" says the Lord. ",
         "This will be a month of " + r(adjectives) + " " + r(nouns) + ". ",
         "God is " + r(verbing) + " " + r(pl_nouns) + " in the " + r(nouns) + ". ",
-        "God told me he is going to " + r(verbs) + " the " + r(adjectives) + " " + r(pl_nouns) + " of " + r(nouns) + ". ",
+        "God told me he is going to " + r(verbs) + " the " + r(adjectives) + " " + r(pl_nouns) + " of the " + r(nouns) + ". ",
+        "God told me he is going to " + r(verbs) + " the " + r(adjectives) + " " + r(pl_nouns) + " of the " + r(nouns_vwl) + ". ",
         "You need to " + r(verbs) + " the " + r(nouns) + ". ",
         "There are " + r(pl_nouns) + " " + r(verbing_intr) + " in the " + r(adjectives) + " " + r(pl_nouns) + ". ",
         "\"I am going to " + r(verbs) + " the " + r(pl_nouns) + " I have for you,\" says the Lord. ",
@@ -316,7 +320,17 @@ View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank
         "As the " + r(pl_nouns) + " begin to " + r(verbs_intr) + ", you will see a " + r(adjectives) + " " + r(nouns) + ". ",
         "It is time to " + r(verbs) + " what the Lord is "+ r(verbing) + ". ",
         "God's " + r(nouns) + " will " + r(verbs_intr) + " when the people " + r(verbs) + " their " + r(nouns) + ". ",
-        "God is showing us right now what the " + r(pl_nouns) + " are "+ r(verbing) + ". ",
+        "God is showing us right now what " + r(pl_nouns) + " are "+ r(verbing_intr) + ". ",
+        "If you want a " + r(adjectives) + " " + r(nouns) " in this season, you need to " + r(verbs) + " your " + r(nouns_vwl) + ". ",
+        "God is " + r(verbing) + " your " + r(adjectives) + " " + r(nouns_vwl) + ". ",
+        "The spirit of " + r(nouns) + " is " + r(verbing_intr) + ". ",
+        "The spirit of " + r(nouns_vwl) + " is " + r(verbing_intr) + ". ",
+        "God says, \"My people will " + r(verbs) + " their " + r(nouns) + ". ",
+        "The Lord says, \"My people will " + r(verbs) + " their " + r(nouns_vwl) + ". ",
+        "You will see " + r(adjectives) + " " + r(pl_nouns) + ". ",
+        "Look for " + (pl_nouns) + " in the heavens. ",
+        "This new season will bring " + r(adjectives) + " " + r(pl_nouns) + ". ",
+        "You will have a " + r(adjectives) + " " + r(nouns_vwl) + ". ",
     );
     const variations = Array(
         r(sentences) + r(sentences),
