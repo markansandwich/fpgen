@@ -5,9 +5,8 @@ Ever wanted to be a modern day prophet but don't know where to start? Well now y
 
 https://fpgenerator.org/
 
-![fpgen_img3](https://user-images.githubusercontent.com/73722162/151685426-c285837d-8793-4bd1-bce0-f1903ad954d7.png)
+![fpgen_img7](https://user-images.githubusercontent.com/73722162/151720075-f5e3a410-1c71-4c5d-82a0-6e8aa47a44d1.png)
 
-![fpgen_img4](https://user-images.githubusercontent.com/73722162/151685428-18e9f50f-f05c-4e60-88d8-ccbbcd9743c6.png)
+![fpgen_img9](https://user-images.githubusercontent.com/73722162/151720076-70bcd13a-473d-4f4c-83b6-175561d0e161.png)
 
-![fpgen_img6](https://user-images.githubusercontent.com/73722162/151715689-72b4ad26-e855-4d85-8fba-90f51a4ec505.png)
-
+![fpgen_img11](https://user-images.githubusercontent.com/73722162/151720078-7765b526-bc19-4823-9000-87b8329ed8dc.png)
