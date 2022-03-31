@@ -3,52 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>FP Generator</title>
-    <link rel="icon" href="https://fpgenerator.org/fpgenicon2.png" type="image/x-icon">
-    <style>
-        .tab {
-            display: inline-block;
-            margin-left: 25px;
-        }
-        .round_b {
-            border-style: solid;
-            border-color: #430043;
-            border-width: medium;
-            border-radius: 10px;
-            background-color: #800080;
-            color: #EDEEEF;
-            font-weight: bold;
-            font-size: 16px;
-            padding: 16px 32px;
-            transition-duration: 0.4s;
-            cursor: pointer;
-        }
-        .round_b:hover {
-            background-color: #EDEEEF; /* */
-            color: #800080;
-        }
-        #falseProphecy {
-            background-image: linear-gradient(to top right, #A189B7 , #FCFCFC);
-        }
-    </style>
+    <link rel="icon" href="fpgenicon2.png" type="image/x-icon">
+    <link rel="stylesheet" href="fpgen.css">
 </head>
 <body>
+<div class="sidenav">
+    <a href="index.html"><button class="round_bp" style="margin-bottom: 10px; width: 100%;">False Prophecy Generator</button></a>
+    <a href="crtgen.html"><button class="round_bg" style="margin-bottom: 10px; width: 100%;">CRT Tweet Generator</button></a>
+</div>
 
+<div class="main">
 <div style="text-align: center">
     <span style="display: inline; text-align: center;">
         <img src="fpgenicon2.png" alt="False-Prophecy-Generator" height="50" width="55" style="display: inline;">
         <span class="tab"></span>
         <h1 style="text-align: center; color: #430043; display: inline;">False Prophecy Generator</h1>
+        <span class="tab"></span>
     </span>
     <h3 style="text-align: center; color: #414A4B;">Generate a new false prophecy: </h3>
-    <button class="round_b" type="falseProphecy" onclick="falseProphecy()">Go!</button>
+    <button class="round_bp" type="falseProphecy" onclick="falseProphecy()">Go!</button>
     <br>
     <br>
     <textarea disabled
             name="falseProphecy"
             id="falseProphecy"
-            rows="5" cols="50"
+            rows="6"
             style="
                 text-align: center;
+                width: 65%;
                 background-color: #CCBFD9;
                 color: #232422;
                 padding: 30px;
@@ -61,7 +43,7 @@
     </textarea>
     <br>
     <br>
-    <button class="round_b" onclick="window.location.reload(true); return false;">Refresh sentences</button>
+    <button class="round_bp" onclick="window.location.reload(true); return false;">Refresh sentences</button>
 <br>
 <br>
 <br>
@@ -72,10 +54,8 @@ View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank
 <br>
 
 </div>
+</div>
 
-    
-    
-    
 
 <script>
     function r(list) {
@@ -91,13 +71,11 @@ View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank
         "transition",
         "new thing",
         "prosperity",
-        "health",
         "river",
         "realm",
         "upgrade",
         "deliverance",
         "shift",
-        "curse",
         "visitation",
         "mantle",
         "timing",
@@ -108,9 +86,7 @@ View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank
         "spirit",
         "reversal",
         "covering",
-        "momentum",
         "healing",
-        "wealth",
         "transfer",
         "season",
         "breakthrough",
@@ -121,15 +97,12 @@ View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank
         "download",
         "stronghold",
         "seed",
-        "Jezebel Spirit",
         "spirit",
         "dream",
-        "breath",
         "manifestation",
         "life",
         "visitation",
         "glory",
-        "bondage",
         "provision",
         "flow",
         "favor",
@@ -137,6 +110,7 @@ View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank
         "fire",
         "presence",
         "blessing",
+        "wealth transfer",
         "portal",
         "kingdom",
         "victory",
@@ -145,6 +119,11 @@ View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank
         "movement",
         "promotion",
     );
+    const nouns_bad = Array(
+        "Jezebel Spirit",
+        "enemy",
+        "curse",
+    )
     const nouns_vwl = Array(
         "activation",
         "advancement",
@@ -159,13 +138,11 @@ View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank
         "alignment",
         "awakening",
         "acceleration",
-        "enemy",
         "appointment",
         "identity",
     );
     const verbs = Array(
         "restore",
-        "bind",
         "ignite",
         "appoint",
         "pour out",
@@ -186,7 +163,6 @@ View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank
         "prosper in",
         "deliver",
         "decree",
-        "battle",
         "release",
         "receive",
         "step into",
@@ -223,6 +199,7 @@ View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank
         "strategies",
         "purposes",
         "dreams",
+        "healings",
         "visions",
         "miracles",
         "blessings",
@@ -245,7 +222,7 @@ View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank
     );
     const verbing = Array(
         "restoring",
-        "binding",
+        "doing",
         "igniting",
         "appointing",
         "pouring out",
@@ -266,7 +243,6 @@ View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank
         "prospering",
         "delivering",
         "decreeing",
-        "battling",
         "releasing",
         "stepping into",
         "leaning into",
@@ -275,6 +251,7 @@ View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank
     );
     const verbing_intr = Array(
         "being restored",
+        "being done",
         "being bound",
         "being ignited",
         "being appointed",
@@ -343,8 +320,15 @@ View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank
         "Look for " + r(pl_nouns) + " in the heavens. ",
         "This new season will bring " + r(adjectives) + " " + r(pl_nouns) + ". ",
         "You will have a " + r(adjectives) + " " + r(nouns_vwl) + ". ",
+        "You need to bind the " + r(nouns_bad) + ". ",
+        "You are going to defeat your " + r(nouns_bad) + ". ",
+        "The " + r(nouns_bad) + " is trying to steal your " + r(nouns) + ". ",
+        "You cannot let the " + r(nouns_bad) + " block your " + r(nouns) + ". ",
     );
     const variations = Array(
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
+        r(sentences) + r(sentences),
         r(sentences) + r(sentences),
         r(sentences) + r(sentences),
         r(sentences) + r(sentences),
