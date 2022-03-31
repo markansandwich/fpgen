@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRT Tweet Generator</title>
+    <link rel="icon" href="crticon.png" type="image/x-icon">
+    <link rel="stylesheet" href="fpgen.css">
+</head>
+<body>
+<div class="sidenav">
+    <a href="index.html"><button class="round_bp" style="margin-bottom: 10px; width: 100%;">False Prophecy Generator</button></a>
+    <a href="crtgen.html"><button class="round_bg" style="margin-bottom: 10px; width: 100%;">CRT Tweet Generator</button></a>
+</div>
+
+<div class="main">
+
+<div style="text-align: center">
+    <span style="display: inline; text-align: center;">
+        <img src="crticon.png" alt="CRT-Generator" height="45" width="45" style="display: inline;">
+        <span class="tab"></span>
+        <h1 style="text-align: center; color: #004609; display: inline;">CRT Tweet Generator</h1>
+    </span>
+
+    <h3 style="text-align: center; color: #414A4B;">Tweet the following or you will be canceled: </h3>
+    <button type="crtGen" onclick="crtGen()" class="round_bg">Go!</button>
+    <br>
+    <br>
+    <textarea disabled
+            name="crtGen"
+            id="crtGen"
+            rows="5"
+            style="
+                text-align: left;
+                width: 65%;
+                padding: 30px;
+                word-wrap: normal;
+                font-weight: bold;
+                font-size: 20px;
+                border-style: solid;
+                border-radius: 10px;
+                display: inline;
+            ">
+    </textarea>
+    <br>
+    <br>
+    <button onclick="window.location.reload(true); return false;" class="round_bg">Refresh sentences</button>
+<br>
+<br>
+<br>
+<br>
+<br>
+View source on <a href="https://github.com/markansandwich/fpgen/" target="_blank">GitHub</a><span class="tab"></span>|<span class="tab"></span>Inspired by CRT bingo from <a href="https://www.youtube.com/c/DearWokeChristian" target="_blank">Dear Woke Christian</a>
+<br>
+<br>
+
+</div>
+</div>
+
+
+<script>
+    function r(list) {
+        return list[Math.floor(Math.random() * list.length)];
+    }
+    const adj_bad = Array(// "majority-white", // "white",
+        "racist",
+        "oppressive",
+        "privileged",
+    );
+    const adj_good = Array(
+        "minority",
+        "black",
+        "intersectional",
+        "oppressed",
+        "enlightened",
+    );
+    const person_bad = Array(
+        "racist",
+        "bigot",
+        "oppressor",
+        "white nationalist",
+        "white supremacist",
+    );
+    const person_good = Array(
+        "person of color",
+        "minority",
+        "black",
+    );
+    const noun_ism_bad = Array(
+        "racism",
+        "whiteness",
+        "privilege",
+        "white privilege",
+    );
+    const verb_bad = Array(
+        "oppress",
+        "cancel",
+        "micro-aggress",
+        "tear down",
+        "de-platform",
+    );
+    const verb_good = Array(
+        "liberate",
+        "support",
+        "elevate",
+        "champion",
+        "respect",
+        "affirm",
+    );
+    const verbing_bad = Array(
+        "oppressing",
+        "canceling",
+        "tearing down",
+        "de-platforming",
+        "micro-aggressing",
+    );
+    const verbing_good = Array(
+        "liberating",
+        "supporting",
+        "championing",
+        "elevating",
+        "affirming",
+        "respecting",
+    );
+    const pl_people_bad = Array(
+        "white supremacists",
+        "racists",
+        "bigots",
+        "oppressors",
+        "white nationalists",
+    );
+    const pl_people_good = Array(
+        "minorities",
+        "people of color",
+        "black people",
+    );
+    const noun_ism_good = Array(
+        "liberation",
+        "reconciliation",
+        "intersectionality",
+        "justice",
+        "social justice",
+    );
+    const author = Array(
+        "Ibram X Kendi",
+        "Jason X",
+        "Dr. Umar Johnson",
+        "Lisa Sharon Harper",
+        "Robyn D'Angelo",
+        "Lee Jenkins",
+        "Henry Rogers",
+        "Jemar Tisby",
+        "Christina Edmondson",
+        "Dante Stewart",
+    );
+    const sentences_short = Array(
+        "Don't be a " + r(person_bad) + ". ",
+        "No one wants to hear about your " + r(noun_ism_bad) + ". ",
+        "Our culture seriously needs to stop " + r(verbing_good) + " " + r(noun_ism_bad) + ". ",
+        "I try to frequent " + r(person_good) + "-owned businesses. ",
+        "Why are there still " + r(adj_bad) + " systems? Tear them down! ",
+        "Stop trying to protect " + r(adj_bad) + " monuments. ",
+        "There is no question that " + r(noun_ism_bad) + " is systemic. ",
+        "Stop " + r(verbing_bad) + " " + r(pl_people_good) + ". ",
+        "We must " + r(verb_good) + " " + r(pl_people_good) + ". ",
+        "It is time to " + r(verb_good) + " " + r(noun_ism_good) + ". ",
+        "Have you repented of your " + r(noun_ism_bad) + " yet today? Didn't think so. ",
+        "If you think " + r(pl_people_bad) + " aren't " + r(adj_bad) + ", you are part of the problem. ",
+        "What are you all doing to further " + r(adj_good) + " " + r(noun_ism_good) + "? ",
+        "It is our duty to " + r(verb_good) + " " + r(person_good) + " voices. ",
+        "Our work doesn't stop at " + r(verbing_good) + " " + r(pl_people_good) + ". ",
+        "We need to " + r(verb_bad) + " more " + r(pl_people_bad) + ". ",
+        "Why aren't we " + r(verbing_bad) + " obvious " + r(pl_people_bad) + "? ",
+        "Loving your neighbor means supporting racial " + r(noun_ism_good) + ". ",
+        "I salute you, " + r(author) + ". ",
+        "So many " + r(pl_people_bad) + " are just afraid of " + r(pl_people_good) + " with power. ",
+        'That "Dear Woke Christian" guy just needs to be quiet! ',
+        "The Bible is actually about " + r(noun_ism_good) + ". ",
+        "I repent of my " + r(noun_ism_bad) + ". ",
+    );
+    const sentences_long = Array(
+        "Simply " + r(verbing_good) + " " + r(pl_people_good) + " is not enough. You must be anti-racist.",
+        "Don't underestimate the importance of publicly " + r(verbing_good) + " " + r(pl_people_good) + ".",
+        "The current racial crisis is an opportunity for " + r(noun_ism_good) + ". What side of history will you be on?",
+        "Being anti-racist necessarily involves " + r(verbing_bad) + " " + r(pl_people_bad) + ".",
+        "If you are " + r(adj_bad) + " in this society, you do not get to have an opinion on " + r(noun_ism_good) + ".",
+        "Our work doesn't stop at " + r(verbing_good) + " " + r(pl_people_good) + ". We must also " + r(verb_bad) + " " + r(pl_people_bad) + ".",
+        "If you think " + r(adj_bad) + " people have something to offer society, you are part of the problem.",
+        "In order to truly understand the " + r(person_good) + " experience, we need to stop elevating " + r(pl_people_bad) + ".",
+        "To my " + r(adj_good) + " followers: What can I do to repent of my " + r(noun_ism_bad) + " and " + r(verb_good) + " your " + r(noun_ism_good) + "?",
+        "To my " + r(person_good) + " followers: What can I do to repent of my " + r(noun_ism_bad) + " and " + r(verb_good) + " your " + r(noun_ism_good) + "?",
+        "I just finished reading an amazing book by " + r(author) + "! Such a great take on " + r(noun_ism_bad) + " and " + r(noun_ism_good) + ".",
+    );
+    const variations = Array(
+        r(sentences_long),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_long),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_long),
+        r(sentences_long),
+        r(sentences_long),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_long),
+        r(sentences_long),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_long),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_long),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_long),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_long),
+        r(sentences_long),
+        r(sentences_long),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_long),
+        r(sentences_long),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_short) + r(sentences_short),
+        r(sentences_long),
+        r(sentences_short) + r(sentences_short),
+    );
+    function crtGen() {
+        document.getElementById('crtGen').value = r(variations)
+    }
+</script>
+
+</body>
+</html>
