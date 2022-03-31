@@ -56,23 +56,25 @@
 #falseProphecy {
     background-image: linear-gradient(to top right, #A189B7 , #FCFCFC);
     text-align: center;
+    vertical-align: middle;
 }
 #crtGen {
     background-image: linear-gradient(to top right, #8db786 , #FCFCFC);
     text-align: center;
+    vertical-align: middle;
 }
 .sidenav {
-  height: 100%;
-  width: 20%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #232422;
-  overflow-x: hidden;
-  padding: 20px;
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #232422;
+    overflow-x: hidden;
+    padding: 20px;
 }
 .main {
-  margin-left: 20%; /* Same as the width of the sidenav */
-  padding: 10px;
+    margin-left: 20%; /* Same as the width of the sidenav */
+    padding: 10px;
 }
